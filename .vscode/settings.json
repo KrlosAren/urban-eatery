@@ -1,0 +1,12 @@
+{
+  "standard.enable": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.prettier": true,
+    "source.fixAll.stylelint": true,
+  },
+  "eslint.validate": [
+    "javascript",
+    "jsx"
+  ]
+}
