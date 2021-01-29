@@ -13,9 +13,8 @@ export function getStart(value) {
       return <MdStar />;
 
     default:
-      break;
+      return value;
   }
-  return value;
 }
 
 export function getStarts(value) {
@@ -44,7 +43,6 @@ export function getStarts(value) {
       return [100, 100, 100, 100, 100];
 
     default:
-      break;
+      return value;
   }
-  return value;
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
-
 // components
 import { Home, Detail } from '../containers/index';
 

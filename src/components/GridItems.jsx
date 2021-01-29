@@ -17,9 +17,7 @@ const GridItems = ({ search }) => {
 
   return (
     <div className='layout_card'>
-      {businesses.map((b) => (
-        <CardItem key={b.id} data={b} />
-      ))}
+      {data.lenght > 0 && data.map((b) => <CardItem key={b.id} data={b} />)}
     </div>
   );
 };

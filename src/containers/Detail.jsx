@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 const Detail = () => {
   const { id } = useParams();
