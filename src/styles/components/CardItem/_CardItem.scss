@@ -1,0 +1,18 @@
+.card__item {
+  border: 1px solid #c4c4c4;
+  height: 100%;
+  max-height: 350px;
+  max-width: 350px;
+  width: 100%;
+
+  &--img {
+    height: 200px;
+    width: 350px;
+
+    img {
+      height: 200px;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+}

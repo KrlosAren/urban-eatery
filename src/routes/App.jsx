@@ -1,12 +1,15 @@
 import React from 'react';
 
+// components
+import { Home } from '../containers/index';
+
 // styles
-import '../styles/components/index.scss';
+import '../styles/index.scss';
 
 function App() {
   return (
     <div>
-      <h1>Hola Mundo</h1>
+      <Home />
     </div>
   );
 }
