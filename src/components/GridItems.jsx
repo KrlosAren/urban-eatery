@@ -10,7 +10,6 @@ const GridItems = ({ search }) => {
   }
 
   if (error) {
-    // console.log(error);
     return <div>...algo sucedio</div>;
   }
 

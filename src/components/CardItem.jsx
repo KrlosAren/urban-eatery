@@ -1,28 +1,34 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Rating from './Rating';
 
 const CardItem = ({ data }) => {
   const {
-    image_url,
+    id,
+    image_url: img,
     name,
     location,
     rating,
-    review_count,
-    display_phone,
+    review_count: review,
+    display_phone: phone,
   } = data;
 
   return (
     <div className='card__item'>
       <div className='card__item--img'>
-        <img src={image_url} alt={name} />
+        <img src={img} alt={name} />
       </div>
       <h2>{name}</h2>
-      <div className='card-review'>
-        <p>{rating}</p>
-        <p>{review_count}</p>
+      <div className='card__item--review'>
+        <Rating value={rating} />
+        {review}
       </div>
-      <div className='card-info'>
-        <p>Phone : {display_phone}</p>
-        <p>Location : {location.display_address}</p>
+      <div className='card__item--info'>
+        <p>Phone :{phone}</p>
+        <p>Location :{location.display_address}</p>
+      </div>
+      <div className='card__item--button'>
+        <Link to={`/detail/${id}`}>Conocer mas</Link>
       </div>
     </div>
   );
