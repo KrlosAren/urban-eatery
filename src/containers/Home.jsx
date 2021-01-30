@@ -5,7 +5,7 @@ import GridItems from '../components/GridItems';
 import Search from '../components/Search';
 
 const Home = () => {
-  const [search, setSearch] = useState([]);
+  const [search, setSearch] = useState('');
 
   return (
     <div className='home'>

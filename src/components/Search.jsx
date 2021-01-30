@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
+import { connect, useDispatch } from 'react-redux';
+
+// actions
+import { search } from '../actions';
+import ACTIONS from '../actions/ACTIONS.redux';
 
 const Search = ({ setSearch }) => {
-  const [input, setInput] = useState('');
+  const dispatch = useDispatch();
+  const [input, setInput] = useState();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (input.length > 2) {
-      setSearch((q) => [input, ...q]);
-      setInput('');
-    } else {
-      console.log('Debe ingresar una busquedad valida');
-    }
+    setSearch(input);
+    dispatch(search(input));
   };
 
   const handleChange = (e) => {
@@ -32,9 +34,15 @@ const Search = ({ setSearch }) => {
           <button type='submit'>Search</button>
         </form>
       </div>
-      <div>{/* <p>{query}</p> */}</div>
+      <div>
+        <p>{input}</p>
+      </div>
     </>
   );
 };
 
-export default Search;
+const mapDispatchToProps = {
+  search,
+};
+
+export default connect(null, mapDispatchToProps)(Search);
