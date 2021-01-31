@@ -1,5 +1,7 @@
 import React, { useReducer, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { FaSearch } from 'react-icons/fa';
+import { IconContext } from 'react-icons';
 import { fetchData } from '../store/user';
 
 const Search = () => {
@@ -25,25 +27,23 @@ const Search = () => {
   };
 
   return (
-    <>
-      <div className='search'>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor='search'>
-            <input
-              type='search'
-              name='search'
-              id='search'
-              onChange={handleChange}
-            />
-            Search
-          </label>
-          <button type='submit'>Search</button>
-        </form>
-      </div>
-      <div>
-        <p>{input}</p>
-      </div>
-    </>
+    <form className='search' onSubmit={handleSubmit}>
+      <label className='search__container' htmlFor='search'>
+        <input
+          className='search__input'
+          type='text'
+          name='search'
+          id='search'
+          placeholder='Search'
+          onChange={handleChange}
+        />
+      </label>
+      <button type='submit'>
+        <IconContext.Provider value={{ color: 'white', size: '1em' }}>
+          <FaSearch />
+        </IconContext.Provider>
+      </button>
+    </form>
   );
 };
 

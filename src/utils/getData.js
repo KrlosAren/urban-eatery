@@ -1,6 +1,6 @@
 // import axios from 'axios';
 
-import db from '../db';
+import db from '../db.json';
 
 // const getData = async ({ query }) =>
 const getData = async () =>
@@ -18,6 +18,6 @@ const getData = async () =>
   //     mode: 'no-cors',
   //   },
   // });
-  db[0];
+  db;
 // return response.data;
 export default getData;
