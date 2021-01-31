@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import Layout from '../components/Layout';
 // components
 import { Home, Detail } from '../containers/index';
 
@@ -9,10 +10,12 @@ import '../styles/index.scss';
 function App() {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/detail/:id' component={Detail} />
-      </Switch>
+      <Layout>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/detail/:id' component={Detail} />
+        </Switch>
+      </Layout>
     </BrowserRouter>
   );
 }

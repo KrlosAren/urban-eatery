@@ -1,0 +1,25 @@
+.footer {
+  @include center-items;
+
+  background-color: $color-secondary;
+  color: $color-white;
+  font-family: $font-mukta;
+  font-size: $font-16;
+  font-weight: $font-300;
+  height: $em * 4;
+  width: $w-100;
+
+  p {
+    margin: 0 $em * 0.25;
+  }
+
+  a {
+    color: $color-primary;
+    margin: 0 $em * 0.25;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-light;
+    }
+  }
+}

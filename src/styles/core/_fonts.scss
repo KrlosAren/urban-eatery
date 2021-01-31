@@ -10,8 +10,8 @@ $font-500: 500;
 $font-700: 700;
 
 // fonts size
-$font-16: $em;
-$font-18: $em + 2;
-$font-20: $em + 4;
-$font-22: $em + 6;
-$font-24: $em + 8;
+$font-16: $em * 1.6;
+$font-18: $em * 1.8;
+$font-20: $em * 2;
+$font-22: $em * 2.2;
+$font-24: $em * 2.4;

@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
-import { connect, useDispatch } from 'react-redux';
+import React, { useReducer, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchData } from '../store/user';
 
-// actions
-import { search } from '../actions';
-import ACTIONS from '../actions/ACTIONS.redux';
-
-const Search = ({ setSearch }) => {
+const Search = () => {
   const dispatch = useDispatch();
+  const { favorites } = useSelector((state) => state.user);
+
   const [input, setInput] = useState();
 
   const handleSubmit = (e) => {
+    const formData = new FormData(e.target);
+    const query = formData.get('search');
     e.preventDefault();
-    setSearch(input);
-    dispatch(search(input));
+    if (query.trim().length > 2) {
+      dispatch(fetchData({ query }));
+    } else {
+      console.log('ingrese un termino valido');
+    }
+    localStorage.clear();
   };
 
   const handleChange = (e) => {
@@ -30,6 +35,7 @@ const Search = ({ setSearch }) => {
               id='search'
               onChange={handleChange}
             />
+            Search
           </label>
           <button type='submit'>Search</button>
         </form>
@@ -41,8 +47,4 @@ const Search = ({ setSearch }) => {
   );
 };
 
-const mapDispatchToProps = {
-  search,
-};
-
-export default connect(null, mapDispatchToProps)(Search);
+export default Search;

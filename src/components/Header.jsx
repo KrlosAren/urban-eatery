@@ -1,8 +1,11 @@
 import React from 'react';
 
+// components
+import Navbar from './Navbar';
+
 const Header = () => (
-  <div>
-    <h2>Header</h2>
+  <div className='header'>
+    <Navbar />
   </div>
 );
 

@@ -1,0 +1,19 @@
+.menu {
+  @include center-items;
+
+  background-color: $color-aux;
+  grid-column: 2/-2;
+  height: $em * 8;
+  justify-content: space-between;
+  width: $w-100;
+
+  &__logo {
+    height: $h-100;
+    width: auto;
+
+    img {
+      height: auto;
+      width: 10%;
+    }
+  }
+}

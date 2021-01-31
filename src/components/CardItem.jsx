@@ -1,5 +1,7 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { saveItem } from '../store/user';
 import Rating from './Rating';
 
 const CardItem = ({ data }) => {
@@ -12,6 +14,8 @@ const CardItem = ({ data }) => {
     review_count: review,
     display_phone: phone,
   } = data;
+
+  const dispatch = useDispatch();
 
   return (
     <div className='card__item'>

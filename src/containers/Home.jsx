@@ -17,10 +17,4 @@ const Home = () => {
   );
 };
 
-// const mapStateToProps = (state) => ({
-//   businesses: state.businesses,
-// });
-
 export default Home;
-// export default connect(props, actions)(Home);
-// export default connect(mapStateToProps, null)(Home);
