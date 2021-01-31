@@ -5,7 +5,7 @@ import getData from '../utils/getData';
 const slice = createSlice({
   name: 'users',
   initialState: {
-    data: [],
+    results: [],
     search: [],
     favorites: [],
     errors: null,
@@ -21,7 +21,7 @@ const slice = createSlice({
     }),
     addData: (state, { payload }) => ({
       ...state,
-      data: payload,
+      results: payload,
       isError: null,
       isLoading: false,
     }),
@@ -42,7 +42,7 @@ export const { saveItem, searchs, addData, setError } = slice.actions;
 export const fetchData = ({ query }) => async (dispatch) => {
   try {
     await getData(query).then((response) => {
-      dispatch(addData(response));
+      dispatch(addData(response.businesses));
     });
   } catch (error) {
     dispatch(setError(error));

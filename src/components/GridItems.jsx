@@ -5,8 +5,7 @@ import { useSelector } from 'react-redux';
 import CardItem from './CardItem';
 
 const GridItems = () => {
-  const { isError, isLoading, data } = useSelector((state) => state.user);
-  const { businesses } = data;
+  const { isError, isLoading, results } = useSelector((state) => state.user);
   if (isLoading) {
     return <div>...cargando</div>;
   }
@@ -15,16 +14,13 @@ const GridItems = () => {
     return <div>...algo sucedio</div>;
   }
   return (
-    <>
-      <h1>data</h1>
-      <div className='layout_card'>
-        {businesses ? (
-          businesses.map((b) => <CardItem key={b.id} data={b} />)
-        ) : (
-          <div>Comienza por buscar tu lugar favorito</div>
-        )}
-      </div>
-    </>
+    <div className='grid__container'>
+      {results ? (
+        results.map((b) => <CardItem key={b.id} data={b} />)
+      ) : (
+        <div>Comienza por buscar tu lugar favorito</div>
+      )}
+    </div>
   );
 };
 

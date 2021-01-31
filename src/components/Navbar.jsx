@@ -7,7 +7,10 @@ import Search from './Search';
 import Logo from '../styles/assets/eating.svg';
 
 const Navbar = () => {
-  const { data } = useSelector((state) => state.user);
+  const { results } = useSelector((state) => state.user);
+
+  const isResults = results.length > 0;
+
   return (
     <nav className='menu container'>
       <div className='menu__logo'>
@@ -15,7 +18,7 @@ const Navbar = () => {
           <Logo />
         </Link>
       </div>
-      {data.length > 0 ? null : (
+      {!isResults ? null : (
         <div className='menu__search'>
           <Search />
         </div>

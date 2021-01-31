@@ -4,11 +4,10 @@ import { useSelector } from 'react-redux';
 
 const Detail = () => {
   const { id } = useParams();
-  const { data: businesses } = useSelector((state) => state.user);
-  const items = Object.values(businesses);
+  const { results } = useSelector((state) => state.user);
+  console.log(results);
 
-  const item = items[0].find((i) => i.id === id);
-  // const detail = businesses.find((b) => b.id === id);
+  const item = results.find((r) => r.id === id);
 
   const history = useHistory();
   const {

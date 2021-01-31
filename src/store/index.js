@@ -4,9 +4,10 @@ import { loadState, saveState } from '../utils/localStorage';
 
 // root reducer
 import user from './user';
+import initialState from './initialState';
 
 const persistedState = loadState();
-const reducer = combineReducers({ user });
+const reducer = combineReducers({ user, initialState });
 
 const store = configureStore({
   reducer,
