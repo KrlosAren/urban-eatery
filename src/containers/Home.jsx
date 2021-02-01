@@ -7,7 +7,8 @@ import Search from '../components/Search';
 
 const Home = () => {
   const { user } = useSelector((state) => state);
-  const { results } = user;
+  console.log(user);
+  const { results, error, isError, isLoading } = user;
 
   const isResults = results.length > 0;
 
@@ -20,6 +21,9 @@ const Home = () => {
           </div>
         ) : null}
         {results.length > 0 && <GridItems />}
+        <div className='errors'>
+          {isError && error.map((e) => <span key={e}>{e}</span>)}
+        </div>
       </div>
     </div>
   );

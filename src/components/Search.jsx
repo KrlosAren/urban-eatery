@@ -1,8 +1,8 @@
-import React, { useReducer, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaSearch } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
-import { fetchData } from '../store/user';
+import { fetchSearch } from '../store/user';
 
 const Search = () => {
   const dispatch = useDispatch();
@@ -15,7 +15,8 @@ const Search = () => {
     const query = formData.get('search');
     e.preventDefault();
     if (query.trim().length > 2) {
-      dispatch(fetchData({ query }));
+      // dispatch(fetchData({ query }));
+      dispatch(fetchSearch(query));
     } else {
       console.log('ingrese un termino valido');
     }

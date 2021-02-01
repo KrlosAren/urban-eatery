@@ -1,6 +1,7 @@
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  justify-items: center;
   padding: 0 $em * 4;
   width: $w-100;
 }

@@ -2,12 +2,15 @@ import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 import { loadState, saveState } from '../utils/localStorage';
 
+// apollo client
+import client from '../apollo/index';
+
 // root reducer
 import user from './user';
 import initialState from './initialState';
 
 const persistedState = loadState();
-const reducer = combineReducers({ user, initialState });
+const reducer = combineReducers({ user, initialState, client });
 
 const store = configureStore({
   reducer,

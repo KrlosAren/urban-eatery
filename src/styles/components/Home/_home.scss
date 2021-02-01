@@ -3,8 +3,7 @@
 
   grid-column: 2/-2;
   height: calc(100vh - 144px);
-  // height: auto;
-  // width: $w-100;
+  width: $w-100;
 
   &__input {
     grid-column: 2/-2;

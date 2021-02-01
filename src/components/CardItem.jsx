@@ -5,31 +5,23 @@ import { saveItem } from '../store/user';
 import Rating from './Rating';
 
 const CardItem = ({ data }) => {
-  const {
-    id,
-    image_url: img,
-    name,
-    location,
-    rating,
-    review_count: review,
-    display_phone: phone,
-  } = data;
+  const { id, name, rating, phone, photos, display_phone } = data;
 
   const dispatch = useDispatch();
 
   return (
     <div className='card__item'>
       <div className='card__item--img'>
-        <img src={img} alt={name} />
+        <img src={photos} alt={name} />
       </div>
       <h2>{name}</h2>
       <div className='card__item--review'>
         <Rating value={rating} />
-        {review}
+        {/* {review} */}
       </div>
       <div className='card__item--info'>
-        <p>Phone :{phone}</p>
-        <p>Location :{location.display_address}</p>
+        <p>Phone :{display_phone}</p>
+        {/* <p>Location :{location.display_address}</p> */}
       </div>
       <div className='card__item--button'>
         <Link to={`/detail/${id}`}>Conocer mas</Link>
