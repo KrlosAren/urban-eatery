@@ -1,16 +1,16 @@
 import React from 'react';
 import { MdStar, MdStarHalf, MdStarBorder } from 'react-icons/md';
 
-export function getStart(value) {
+export function getStart(value, size = 25) {
   switch (value) {
     case 0:
-      return <MdStarBorder size={25} style={{ fill: '#696969' }} />;
+      return <MdStarBorder size={size} style={{ fill: '#696969' }} />;
 
     case 50:
-      return <MdStarHalf size={25} style={{ fill: '#ffe234' }} />;
+      return <MdStarHalf size={size} style={{ fill: '#ffe234' }} />;
 
     case 100:
-      return <MdStar size={25} style={{ fill: '#ffe234' }} />;
+      return <MdStar size={size} style={{ fill: '#ffe234' }} />;
 
     default:
       return value;

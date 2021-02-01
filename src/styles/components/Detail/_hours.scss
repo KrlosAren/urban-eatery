@@ -1,14 +1,17 @@
 .info__hours {
+  display: flex;
+  flex-direction: column;
   font-family: $font-mukta;
   font-size: $font-16;
   height: $h-100;
+  justify-content: center;
   margin-top: $em * 0.25;
   width: $w-100 - 50;
 }
 
 .hour {
-  line-height: $em * 1.5;
-  width: 100%;
+  padding: $em * 0.08;
+  width: $w-100;
 
   span:first-of-type {
     color: $color-primary;

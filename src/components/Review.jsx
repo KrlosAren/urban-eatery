@@ -6,14 +6,16 @@ const Review = ({ review }) => {
 
   console.log(review);
   return (
-    <div className='review-card'>
-      <div className='review__info--user'>
+    <div className='review__card'>
+      <div className='review__card--user'>
         <img src={user.image_url} alt={user.name} />
-        <h3>{user.name}</h3>
-        <div className='review__info--rating'>
-          <p>{text}</p>
-          <Rating value={rating} />
+        <div className='user-info'>
+          <h3>{user.name}</h3>
+          <Rating value={rating} size={15} />
         </div>
+      </div>
+      <div className='review__card--msg'>
+        <p>{text}</p>
       </div>
     </div>
   );

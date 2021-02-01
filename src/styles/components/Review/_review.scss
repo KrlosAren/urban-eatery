@@ -1,5 +1,41 @@
-.review__info--user {
-  img {
-    width: 10%;
+.reviews__container {
+  max-height: 500px;
+  overflow-x: auto;
+}
+
+.review__card {
+  border: 1px solid $color-light;
+  box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+  margin: $em * 2 0;
+  padding: $em;
+}
+
+.review__card--user {
+  display: flex;
+  padding: $em;
+
+  h3 {
+    color: $color-primary;
+    font-family: $font-mukta;
+    font-size: $font-16;
+    font-weight: $font-700;
   }
+
+  img {
+    border-radius: 50%;
+    height: $em * 5;
+    object-fit: cover;
+    width: $em * 5;
+  }
+}
+
+.review__card--msg {
+  color: $color-secondary;
+  font-family: $font-mukta;
+  font-size: $font-12;
+  font-weight: $font-300;
+}
+
+.user-info {
+  margin-left: $em;
 }

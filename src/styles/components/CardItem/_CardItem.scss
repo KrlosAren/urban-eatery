@@ -40,8 +40,9 @@
   }
 
   span {
-    color: $color-primary;
-    font-weight: $font-300;
+    color: $color-secondary;
+    font-weight: $font-500;
+    margin-left: $em;
   }
 }
 
@@ -59,11 +60,5 @@
 }
 
 .card__item--button {
-  background-color: $color-light;
-  color: $color-white;
-  font-size: $font-16;
-  padding: $em * 0.5;
-  text-align: center;
-  text-decoration: none;
-  width: $w-100;
+  @include button;
 }

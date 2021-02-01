@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { FaMapMarkerAlt, FaMoneyBillAlt, FaPhoneAlt } from 'react-icons/fa';
 import Rating from '../components/Rating';
@@ -11,7 +11,6 @@ const Detail = () => {
   const { results } = useSelector((state) => state.user);
 
   const item = results.find((r) => r.id === id);
-  console.log(item);
 
   const history = useHistory();
   const {
@@ -25,8 +24,6 @@ const Detail = () => {
     location,
     reviews,
   } = item;
-  console.log(hours[0]);
-  debugger;
 
   return (
     <div className='container'>
@@ -69,11 +66,14 @@ const Detail = () => {
                   <span style={{ color: '#ec4646' }}>Closed</span>
                 )}
               </div>
+              <Link to='/' className='button-back'>
+                Back
+              </Link>
             </div>
           </div>
         </div>
 
-        <div className='review__card'>
+        <div className='reviews__container'>
           {reviews?.map((review) => (
             <Review key={review.id} review={review} />
           ))}

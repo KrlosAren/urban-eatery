@@ -15,7 +15,7 @@
     width: $w-100;
 
     img {
-      height: 400px;
+      height: 500px;
       max-height: 100%;
       min-width: 100%;
       object-fit: cover;
@@ -24,6 +24,8 @@
   }
 
   &--info {
+    display: flex;
+    flex-direction: column;
     grid-column: 2/-1;
     height: $h-100;
     padding: 0 $em * 2;
@@ -87,7 +89,7 @@
   font-size: $font-18;
   font-weight: $font-700;
   height: auto;
-  padding: $em 0;
+  padding: $em * 0.5 0;
   width: $w-100;
 
   span:last-of-type {
@@ -99,4 +101,16 @@
 .review__card {
   grid-column: 2/-1;
   grid-row: 2/-1;
+}
+
+.button-back {
+  @include button;
+
+  float: right;
+}
+
+.card-info_hours {
+  display: flex;
+  flex-direction: column;
+  height: $h-100;
 }
