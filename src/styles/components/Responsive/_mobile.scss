@@ -1,0 +1,54 @@
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 0 $em * 2;
+  }
+
+  .home {
+    grid-column: 1/-1;
+  }
+
+  .search {
+    padding: 0;
+  }
+
+  .menu__search {
+    grid-column: 1/-1;
+  }
+
+  .menu__logo {
+    grid-column: 6/-6;
+  }
+
+  .menu__list {
+    display: none;
+  }
+
+  .detail__card--img {
+    grid-column: 1/-1;
+  }
+
+  .detail__layout {
+    gap: $em;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .detail__card {
+    grid-column: 1/-1;
+  }
+
+  .detail__card--info {
+    grid-column: 1/-1;
+    margin-top: $em * 2;
+    padding: 0;
+  }
+
+  .reviews__container {
+    grid-column: 1/-1;
+    margin-top: $em * 5;
+  }
+
+  .info__hours {
+    width: $w-100;
+  }
+}

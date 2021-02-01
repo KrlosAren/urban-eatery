@@ -38,11 +38,11 @@ const Detail = () => {
               <Rating value={rating} />
               <span>{review_count} reviews</span>
             </div>
-            <p className='info__price'>
-              <FaMoneyBillAlt size={20} style={{ color: '#ff5a29' }} />
-              <span>{price || 'Not info'}</span>
-            </p>
             <div className='card-info_hours'>
+              <p className='info__price'>
+                <FaMoneyBillAlt size={20} style={{ color: '#ff5a29' }} />
+                <span>{price || 'Not info'}</span>
+              </p>
               <div className='info__location'>
                 <div>
                   <FaMapMarkerAlt size={20} style={{ color: '#ff5a29' }} />
