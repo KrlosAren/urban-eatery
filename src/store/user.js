@@ -14,7 +14,7 @@ const slice = createSlice({
   name: 'users',
   initialState: {
     results: [],
-    search: [],
+    searchs: [],
     favorites: [],
     error: [],
     isError: false,
@@ -24,8 +24,8 @@ const slice = createSlice({
     saveItem: (state, { payload }) => ({
       favorites: [...state.favorites, payload],
     }),
-    searchs: (state, { payload }) => ({
-      search: [...state.search, payload],
+    saveSearch: (state, action) => ({
+      searchs: [...state.searchs].push(action.payload),
     }),
     addData: (state, { payload }) => ({
       ...state,
@@ -39,11 +39,28 @@ const slice = createSlice({
       isError: true,
       isLoading: false,
     }),
+    setCity: (state, { payload }) => ({
+      ...state,
+      city: payload,
+    }),
   },
   extraReducers: {
+    [fetchSearch.pending]: (state) => ({
+      ...state,
+      isLoading: true,
+      isError: false,
+    }),
     [fetchSearch.fulfilled]: (state, { payload }) => ({
       ...state,
       results: [...payload],
+      isLoading: false,
+      error: false,
+    }),
+    [fetchSearch.rejected]: (state, action) => ({
+      ...state,
+      isError: true,
+      error: [...state.error, action.error.message],
+      isLoading: false,
     }),
   },
 });
@@ -51,14 +68,10 @@ const slice = createSlice({
 export default slice.reducer;
 
 // actions
-export const { saveItem, searchs, addData, setError } = slice.actions;
-
-// export const fetchData = ({ query }) => async (dispatch) => {
-//   await getData(query)
-//     .then((data) => {
-//       dispatch(addData(data.data));
-//     })
-//     .catch((error) => {
-//       dispatch(setError(error.message));
-//     });
-// };
+export const {
+  saveItem,
+  saveSearch,
+  addData,
+  setError,
+  setCity,
+} = slice.actions;

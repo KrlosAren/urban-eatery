@@ -21,14 +21,26 @@
   &__search {
     @include center-items;
 
-    grid-column: 2/8;
+    grid-column: 2/10;
     justify-content: space-between;
     width: $w-100;
   }
 
   &__list {
-    @include center-items;
+    align-self: center;
+    grid-column: 12/-1;
+    justify-self: center;
 
-    grid-column: 8/-1;
+    a {
+      color: $color-secondary;
+      font-family: $font-mukta;
+      font-size: $font-16;
+      font-weight: $font-500;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }

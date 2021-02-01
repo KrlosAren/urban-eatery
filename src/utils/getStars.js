@@ -4,13 +4,13 @@ import { MdStar, MdStarHalf, MdStarBorder } from 'react-icons/md';
 export function getStart(value) {
   switch (value) {
     case 0:
-      return <MdStarBorder />;
+      return <MdStarBorder size={25} style={{ fill: '#696969' }} />;
 
     case 50:
-      return <MdStarHalf />;
+      return <MdStarHalf size={25} style={{ fill: '#ffe234' }} />;
 
     case 100:
-      return <MdStar />;
+      return <MdStar size={25} style={{ fill: '#ffe234' }} />;
 
     default:
       return value;

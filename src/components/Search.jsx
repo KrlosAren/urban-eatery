@@ -1,26 +1,36 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaSearch } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
-import { fetchSearch } from '../store/user';
+import { useHistory, useParams } from 'react-router-dom';
+import { fetchSearch, saveSearch, setError } from '../store/user';
 
 const Search = () => {
   const dispatch = useDispatch();
-  const { favorites } = useSelector((state) => state.user);
-
+  // const { favorites } = useSelector((state) => state.user);
+  const form = useRef(null);
   const [input, setInput] = useState();
+  const history = useHistory();
+  const { pathname } = useParams();
 
   const handleSubmit = (e) => {
-    const formData = new FormData(e.target);
-    const query = formData.get('search');
     e.preventDefault();
-    if (query.trim().length > 2) {
-      // dispatch(fetchData({ query }));
-      dispatch(fetchSearch(query));
+    const formData = new FormData(form.current);
+    const query = {
+      search: formData.get('search'),
+      location: formData.get('location') || 'santiago',
+    };
+    if (query.search.trim().length > 2 && query.location.trim().length > 2) {
+      dispatch(fetchSearch(query), saveSearch(query));
+      // dispatch(searchs(query.search));
+      localStorage.clear();
     } else {
-      console.log('ingrese un termino valido');
+      dispatch(setError('Debe ingresar todos los datos'));
+      localStorage.clear();
     }
-    localStorage.clear();
+    if (pathname !== '/') {
+      history.push('/');
+    }
   };
 
   const handleChange = (e) => {
@@ -28,7 +38,7 @@ const Search = () => {
   };
 
   return (
-    <form className='search' onSubmit={handleSubmit}>
+    <form className='search' ref={form}>
       <label className='search__container' htmlFor='search'>
         <input
           className='search__input'
@@ -37,9 +47,20 @@ const Search = () => {
           id='search'
           placeholder='Search'
           onChange={handleChange}
+          required
         />
       </label>
-      <button type='submit'>
+      <label className='search__location' htmlFor='location'>
+        <input
+          className='search__input'
+          type='text'
+          name='location'
+          id='location'
+          placeholder='Santiago'
+          onChange={handleChange}
+        />
+      </label>
+      <button type='submit' onClick={handleSubmit}>
         <IconContext.Provider value={{ color: 'white', size: '1em' }}>
           <FaSearch />
         </IconContext.Provider>

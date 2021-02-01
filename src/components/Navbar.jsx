@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Search from './Search';
 
@@ -8,7 +8,6 @@ import Logo from '../styles/assets/eating.svg';
 
 const Navbar = () => {
   const { results } = useSelector((state) => state.user);
-
   const isResults = results.length > 0;
 
   return (
@@ -18,21 +17,19 @@ const Navbar = () => {
           <Logo />
         </Link>
       </div>
-      {!isResults ? null : (
+      {isResults && (
         <div className='menu__search'>
           <Search />
         </div>
       )}
       <div className='menu__list'>
-        <Link to='/favorites' className='menu__item'>
-          My Favorites
-        </Link>
-        <Link to='/favorites' className='menu__item'>
-          Login
-        </Link>
-        <Link to='/favorites' className='menu__item'>
-          Sing Up
-        </Link>
+        <NavLink
+          to='/favorites'
+          className='menu__item'
+          activeStyle={{ textDecoration: 'underline' }}
+        >
+          Favorites
+        </NavLink>
       </div>
     </nav>
   );

@@ -1,9 +1,11 @@
 @import './core/core';
+@import './components/Spinner/spinner';
 @import './components/Home/home';
-@import './components/LayoutCard/LayoutCard';
-@import './components/CardItem/CardItem';
 @import './components/Footer/footer';
 @import './components/Header/header';
-@import './components/Menu/menu';
+@import './components/Navbar/menu';
 @import './components/GridItems/gridItems';
 @import './components/Search/search';
+@import './components/CardItem/CardItem';
+@import './components/Detail/detail';
+@import './components/Review/review';

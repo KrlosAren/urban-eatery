@@ -5,3 +5,19 @@
   padding: 0 $em * 4;
   width: $w-100;
 }
+
+.fullview {
+  @include center-items;
+
+  height: calc(100vh - 144px);
+  width: $w-100;
+}
+
+.detail-layout {
+  display: grid;
+  grid-column: 1/-1;
+  grid-template-columns: 1fr 20%;
+  height: auto;
+  margin: $em * 4.5 0;
+  width: $w-100;
+}

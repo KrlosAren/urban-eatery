@@ -1,45 +1,83 @@
 import React from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { FaMapMarkerAlt, FaMoneyBillAlt, FaPhoneAlt } from 'react-icons/fa';
+import Rating from '../components/Rating';
+import Review from '../components/Review';
+import Hours from '../components/Hours';
 
 const Detail = () => {
   const { id } = useParams();
   const { results } = useSelector((state) => state.user);
-  console.log(results);
 
   const item = results.find((r) => r.id === id);
+  console.log(item);
 
   const history = useHistory();
   const {
     name,
-    image_url: img,
-    is_closed: isClosed,
-    review_count: review,
     rating,
-    coordinates,
-    transactions,
     price,
+    photos,
+    hours,
+    review_count,
+    display_phone,
     location,
-    phone,
-    display_phone: displayPhone,
-    display_address: address,
+    reviews,
   } = item;
+  console.log(hours[0]);
+  debugger;
 
   return (
-    <div>
-      <h2>{name}</h2>
-      <div className='detail__card--img'>
-        <img src={img} alt={name} />
-      </div>
-      <div className='detail__card--buttons'>
-        <button
-          type='button'
-          onClick={() => {
-            history.push('/');
-          }}
-        >
-          get Back
-        </button>
+    <div className='container'>
+      <div className='detail-layout'>
+        <div className='detail__card'>
+          <div className='detail__card--img'>
+            <img src={photos} alt={name} />
+          </div>
+          <div className='detail__card--info'>
+            <h1>{name}</h1>
+            <div className='info__review'>
+              <Rating value={rating} />
+              <span>{review_count} reviews</span>
+            </div>
+            <p className='info__price'>
+              <FaMoneyBillAlt size={20} style={{ color: '#ff5a29' }} />
+              <span>{price || 'Not info'}</span>
+            </p>
+            <div className='card-info_hours'>
+              <div className='info__location'>
+                <div>
+                  <FaMapMarkerAlt size={20} style={{ color: '#ff5a29' }} />
+                  <span>{location.formatted_address}</span>
+                </div>
+                <div>
+                  <FaPhoneAlt size={20} style={{ color: '#ff5a29' }} />{' '}
+                  <span>{display_phone}</span>
+                </div>
+              </div>
+              <div className='info__hours'>
+                {hours[0].open.map((hour) => (
+                  <Hours hour={hour} />
+                ))}
+              </div>
+              <div className='info__open'>
+                <span>Status:</span>
+                {hours[0].is_open_now ? (
+                  <span>Open</span>
+                ) : (
+                  <span style={{ color: '#ec4646' }}>Closed</span>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className='review__card'>
+          {reviews?.map((review) => (
+            <Review key={review.id} review={review} />
+          ))}
+        </div>
       </div>
     </div>
   );

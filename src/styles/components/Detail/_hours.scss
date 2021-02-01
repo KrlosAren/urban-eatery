@@ -1,0 +1,22 @@
+.info__hours {
+  font-family: $font-mukta;
+  font-size: $font-16;
+  height: $h-100;
+  margin-top: $em * 0.25;
+  width: $w-100 - 50;
+}
+
+.hour {
+  line-height: $em * 1.5;
+  width: 100%;
+
+  span:first-of-type {
+    color: $color-primary;
+    font-weight: $font-500;
+  }
+
+  span:last-of-type {
+    color: $color-secondary;
+    float: right;
+  }
+}

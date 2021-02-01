@@ -1,11 +1,11 @@
 import client from '../apollo';
 import { SEARCH } from '../apollo/querys';
 
-const getData = async (query, location = 'santiago') => {
+const getData = async (query) => {
   const response = await client.query({
     variables: {
-      query,
-      location,
+      search: query.search,
+      location: query.location,
     },
     query: SEARCH,
   });

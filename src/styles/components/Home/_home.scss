@@ -1,6 +1,7 @@
 .home {
   @include center-items;
 
+  flex-direction: column;
   grid-column: 2/-2;
   height: calc(100vh - 144px);
   width: $w-100;

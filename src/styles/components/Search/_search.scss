@@ -9,23 +9,18 @@
     width: $w-100;
 
     input[type='text'] {
-      background-color: $color-primary;
-      border: transparent;
+      @include inputs;
+
       border-end-start-radius: $em * 0.35;
       border-start-start-radius: $em * 0.35;
-      color: $color-white;
-      display: flex;
-      flex-direction: column;
-      height: $em * 3;
-      outline: none;
-      padding: 0 $em;
-      width: $w-100;
+    }
+  }
 
-      &:focus {
-        color: $color-white;
-        font-weight: $font-500;
-        padding: $em;
-      }
+  &__location {
+    input[type='text'] {
+      @include inputs;
+
+      border-left: 1px solid $color-secondary;
     }
   }
 }

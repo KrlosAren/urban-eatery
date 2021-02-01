@@ -5,17 +5,8 @@ import { useSelector } from 'react-redux';
 import CardItem from './CardItem';
 
 const GridItems = () => {
-  // const { isError, isLoading, results } = useSelector((state) => state.user);
-  const { results, isError, isLoading, error } = useSelector(
-    (state) => state.user
-  );
-  if (isLoading) {
-    return <div>...cargando</div>;
-  }
+  const { results } = useSelector((state) => state.user);
 
-  if (isError) {
-    return <div>...algo sucedio</div>;
-  }
   return (
     <div className='grid__container'>
       {results ? (
