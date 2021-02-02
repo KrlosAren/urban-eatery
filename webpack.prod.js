@@ -7,6 +7,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
+const dev = process.env.ENV;
+
 module.exports = {
   entry: {
     app: './src/index.js',
@@ -14,7 +16,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[fullhash].js',
-    publicPath: 'dist',
+    publicPath: dev === 'dev' ? 'http://localhost:3001' : 'dist',
     chunkFilename: 'js/[id].[chunkhash].js',
   },
   optimization: {
@@ -84,7 +86,7 @@ module.exports = {
     new AddAssetHtmlPLugin({
       filepath: path.resolve(__dirname, 'dist/js/*.dll.js'),
       outputPath: 'js',
-      publicPath: 'dist',
+      publicPath: dev === 'dev' ? 'http://localhost:3001/js' : 'dist',
     }),
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ['**/app.*'],

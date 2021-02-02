@@ -4,7 +4,6 @@ import Rating from './Rating';
 const Review = ({ review }) => {
   const { rating, text, user } = review;
 
-  console.log(review);
   return (
     <div className='review__card'>
       <div className='review__card--user'>

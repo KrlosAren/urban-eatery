@@ -7,12 +7,18 @@ import Search from './Search';
 import Logo from '../styles/assets/eating.svg';
 
 const Navbar = () => {
+  // get results from redux
   const { results } = useSelector((state) => state.user);
   const isResults = results.length > 0;
 
+  // inline styles
+  const style = {
+    gridColumn: isResults && '1/2',
+  };
+
   return (
     <nav className='menu container'>
-      <div className='menu__logo'>
+      <div className='menu__logo' style={style}>
         <Link to='/'>
           <Logo />
         </Link>
@@ -22,15 +28,6 @@ const Navbar = () => {
           <Search />
         </div>
       )}
-      <div className='menu__list'>
-        <NavLink
-          to='/favorites'
-          className='menu__item'
-          activeStyle={{ textDecoration: 'underline' }}
-        >
-          Favorites
-        </NavLink>
-      </div>
     </nav>
   );
 };

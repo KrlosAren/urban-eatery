@@ -4,6 +4,7 @@
   color: $color-secondary;
   flex-direction: column;
   font-family: $font-mukta;
+  grid-column: 2/-2;
   height: 100vh;
 
   p:first-of-type {

@@ -1,6 +1,6 @@
 @media only screen and (max-width: 600px) {
   .container {
-    padding: 0 $em;
+    padding: 0 $em * 3;
   }
 
   .home {
@@ -60,7 +60,8 @@
 
   .reviews__container {
     grid-column: 1/-1;
-    margin-top: $em * 5;
+    margin-top: $em * 6;
+    max-height: $em * 40;
   }
 
   .info__hours {
@@ -70,6 +71,7 @@
   .menu {
     display: grid;
     grid-template-rows: $em * 8 $em * 10;
+    height: $em * 8;
   }
 
   .detail-layout {
@@ -83,5 +85,18 @@
   .home-with-search {
     grid-column: 1/-1;
     margin-top: $em * 18;
+  }
+
+  .reviews__grid {
+    max-height: 350px;
+  }
+
+  .home-intro {
+    padding: 0;
+  }
+
+  .errors {
+    height: $em * 4;
+    width: 85%;
   }
 }

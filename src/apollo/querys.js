@@ -1,13 +1,17 @@
 import { gql } from '@apollo/client';
 
-export const SEARCH_TERMS = gql`
-  {
-    business(id: "yelp-san-francisco") {
-      name
-      id
-      coordinates {
-        latitude
-        longitude
+export const REVIEWS = gql`
+  query find($business: String!) {
+    reviews(business: $business, limit: 20) {
+      review {
+        id
+        text
+        rating
+        user {
+          id
+          name
+          image_url
+        }
       }
     }
   }
@@ -15,10 +19,11 @@ export const SEARCH_TERMS = gql`
 
 export const SEARCH = gql`
   query find($search: String!, $location: String!) {
-    search(term: $search, location: $location) {
+    search(term: $search, location: $location, categories: "food") {
       total
       business {
         id
+        alias
         name
         rating
         phone

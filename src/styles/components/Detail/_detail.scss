@@ -15,9 +15,9 @@
     width: $w-100;
 
     img {
-      height: 500px;
-      max-height: 100%;
-      min-width: 100%;
+      height: $em * 56;
+      max-height: $h-100;
+      min-width: $w-100;
       object-fit: cover;
       width: $w-100;
     }
@@ -27,7 +27,7 @@
     display: flex;
     flex-direction: column;
     grid-column: 2/-1;
-    height: $h-100;
+    height: $em * 56;
     padding: 0 $em * 2;
 
     h1 {
@@ -42,15 +42,7 @@
 }
 
 .info__review {
-  align-items: center;
-  display: flex;
-
-  span {
-    color: $color-secondary;
-    font-size: $font-16;
-    font-weight: $font-700;
-    margin-left: $em * 2;
-  }
+  @include detail-mixin;
 }
 
 .info__price {
@@ -63,6 +55,16 @@
     color: $color-secondary;
     font-size: $font-16;
     margin-left: $em;
+  }
+}
+
+.detail__info {
+  @include detail-mixin;
+
+  span {
+    margin-left: 0;
+    text-align: center;
+    width: $w-100;
   }
 }
 

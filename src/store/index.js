@@ -5,12 +5,11 @@ import { loadState, saveState } from '../utils/localStorage';
 // apollo client
 import client from '../apollo/index';
 
-// root reducer
+// slices reducer
 import user from './user';
-import initialState from './initialState';
 
 const persistedState = loadState();
-const reducer = combineReducers({ user, initialState, client });
+const reducer = combineReducers({ user, client });
 
 const store = configureStore({
   reducer,

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useHistory, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { FaMapMarkerAlt, FaMoneyBillAlt, FaPhoneAlt } from 'react-icons/fa';
@@ -6,12 +6,14 @@ import { MdSchedule } from 'react-icons/md';
 import Rating from '../components/Rating';
 import Review from '../components/Review';
 import Hours from '../components/Hours';
+import client from '../apollo';
+import { REVIEWS } from '../apollo/querys';
 
 const Detail = () => {
-  const { id } = useParams();
+  const { alias } = useParams();
   const { results } = useSelector((state) => state.user);
 
-  const item = results.find((r) => r.id === id);
+  const item = results.find((business) => business.alias === alias);
 
   const history = useHistory();
   const {
@@ -55,7 +57,10 @@ const Detail = () => {
                 </div>
               </div>
               <div className='info__hours'>
-                <MdSchedule />
+                <div className='detail__info'>
+                  <MdSchedule size={20} style={{ color: '#ff5a29' }} />
+                  <span>Schedules</span>
+                </div>
                 {hours[0]
                   ? hours[0].open.map((hour) => <Hours hour={hour} />)
                   : 'Not Info'}
@@ -78,12 +83,16 @@ const Detail = () => {
             </div>
           </div>
         </div>
-
-        <div className='reviews__container'>
-          {reviews?.map((review) => (
-            <Review key={review.id} review={review} />
-          ))}
-        </div>
+        {reviews && (
+          <div className='reviews__container'>
+            <h3 className='reviews__title'>Reviews</h3>
+            <div className='reviews__grid'>
+              {reviews.map((review) => (
+                <Review key={review.id} review={review} />
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ import Rating from './Rating';
 const CardItem = ({ data }) => {
   const {
     id,
+    alias,
     name,
     rating,
     photos,
@@ -35,8 +36,8 @@ const CardItem = ({ data }) => {
           <FaMapMarkerAlt color='#ff5a29' />
           <span>{location.formatted_address}</span>
         </p>
-        <Link to={`/detail/${id}`} className='card__item--button'>
-          More...
+        <Link to={`/detail/${alias}`} className='card__item--button'>
+          View More...
         </Link>
       </div>
     </div>

@@ -10,9 +10,6 @@
 
     input[type='text'] {
       @include inputs;
-
-      border-end-start-radius: $em * 0.35;
-      border-start-start-radius: $em * 0.35;
     }
   }
 
@@ -28,8 +25,6 @@
 button[type='submit'] {
   background-color: $color-secondary;
   border: transparent;
-  border-end-end-radius: $em * 0.35;
-  border-start-end-radius: $em * 0.35;
   height: $em * 3;
   width: $em * 3;
 
@@ -40,4 +35,19 @@ button[type='submit'] {
   &:active {
     transform: scale(0.75);
   }
+}
+
+.home-intro {
+  @include center-items;
+
+  color: $color-secondary;
+  flex-direction: column;
+  font-family: $font-mukta;
+  font-size: $font-24;
+  font-weight: $font-700;
+  margin: $em 0;
+  padding: 0 $em * 2;
+  position: absolute;
+  top: 25%;
+  width: $w-100;
 }
