@@ -19,6 +19,11 @@ module.exports = {
   },
   optimization: {
     minimizer: [new TerserPlugin(), new OptimizeCssAssetsPlugin()],
+    splitChunks: {
+      chunks: 'all',
+      minSize: 0,
+      name: 'commons',
+    },
   },
   resolve: {
     extensions: ['.js', '.jsx'],
