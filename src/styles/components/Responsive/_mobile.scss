@@ -65,4 +65,12 @@
   .detail-layout {
     margin-top: $em * 10;
   }
+
+  .grid__container {
+    grid-template-columns: 1fr;
+  }
+
+  .home-with-search {
+    margin-top: $em * 10;
+  }
 }

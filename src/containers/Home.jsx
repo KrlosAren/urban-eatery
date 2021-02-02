@@ -1,5 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // components
 import GridItems from '../components/GridItems';
@@ -8,7 +10,7 @@ import Spinner from '../components/Spinner';
 
 const Home = () => {
   const { user } = useSelector((state) => state);
-  const { results, error, isError, isLoading } = user;
+  const { results, isError, isLoading } = user;
   const isResults = results.length > 0;
 
   if (isLoading) {
@@ -24,8 +26,10 @@ const Home = () => {
           </div>
         )}
         {isResults && <GridItems />}
-        {/* {!isResults && <div>No hay resultados</div>} */}
-        <div className='errors'>{error && <span>{error}</span>}</div>
+        <ToastContainer />
+        <ul className='errors' id='msg'>
+          {isError && toast.error('😅 Something has happened !. Try again!')}
+        </ul>
       </div>
     </div>
   );

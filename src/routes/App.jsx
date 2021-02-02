@@ -3,6 +3,7 @@ import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import Layout from '../components/Layout';
 // components
 import { Home, Detail } from '../containers/index';
+import NotFound from '../containers/NotFound';
 
 // styles
 import '../styles/index.scss';
@@ -14,6 +15,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/detail/:id' component={Detail} />
+          <Route component={NotFound} />
         </Switch>
       </Layout>
     </BrowserRouter>

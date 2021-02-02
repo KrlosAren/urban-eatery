@@ -32,6 +32,7 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/,
+        exclude: [/node_module/],
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -72,7 +73,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    port: 4000,
+    port: 3500,
     historyApiFallback: true,
   },
 };
