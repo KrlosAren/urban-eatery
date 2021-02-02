@@ -9,14 +9,19 @@
 
   .search {
     padding: 0;
+
+    button[type='submit'] {
+      width: $em * 6;
+    }
   }
 
   .menu__search {
     grid-column: 1/-1;
+    grid-row: 2/-1;
   }
 
   .menu__logo {
-    grid-column: 6/-6;
+    grid-column: 5/-5;
   }
 
   .menu__list {
@@ -50,5 +55,14 @@
 
   .info__hours {
     width: $w-100;
+  }
+
+  .menu {
+    display: grid;
+    grid-template-rows: $em * 8 $em * 10;
+  }
+
+  .detail-layout {
+    margin-top: $em * 10;
   }
 }
