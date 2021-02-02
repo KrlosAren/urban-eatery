@@ -4,12 +4,11 @@ const API_KEY =
   'TzJsZJG_YNdcwJNbZCPLrM01PlwUGAukOQE52Gm8Pvog1sajR2slYYBxSPpohxBFELPBNLZDc81NiaWwFMIXFg4GgBY_02cMQI4iNh2yi5hVy3gxlncApTM9axITYHYx';
 
 const client = new ApolloClient({
-  // uri: 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/graphql',
-  uri: 'https://api.yelp.com/v3/graphql',
+  uri: 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/graphql',
   cache: new InMemoryCache(),
+  credentials: 'same-origin',
   headers: {
     Authorization: `Bearer ${API_KEY}`,
-    'Content-Type': 'application/json',
     'Accept-Language': 'en_US',
   },
 });

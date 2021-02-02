@@ -2,13 +2,11 @@
   @include center-items;
 
   background-color: $color-secondary;
-  bottom: 0;
   color: $color-white;
   font-family: $font-mukta;
   font-size: $font-16;
   font-weight: $font-300;
   height: $em * 4;
-  position: absolute;
   width: $w-100;
 
   p {

@@ -1,7 +1,5 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 // components
 import GridItems from '../components/GridItems';
@@ -26,9 +24,8 @@ const Home = () => {
           </div>
         )}
         {isResults && <GridItems />}
-        <ToastContainer />
         <ul className='errors' id='msg'>
-          {isError && toast.error('😅 Something has happened !. Try again!')}
+          {isError && <li>😅 Something has happened !. Try again!</li>}
         </ul>
       </div>
     </div>
