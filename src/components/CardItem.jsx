@@ -36,7 +36,7 @@ const CardItem = ({ data }) => {
           <span>{location.formatted_address}</span>
         </p>
         <Link to={`/detail/${id}`} className='card__item--button'>
-          More...
+          View More...
         </Link>
       </div>
     </div>

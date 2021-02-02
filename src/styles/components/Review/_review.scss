@@ -1,5 +1,22 @@
 .reviews__container {
-  max-height: 500px;
+  display: grid;
+  grid-template-rows: $em * 4.2 $em * 50;
+}
+
+.reviews__title {
+  border-bottom: 2px solid $color-light;
+  color: $color-primary;
+  font-family: $font-mukta;
+  font-size: $font-24;
+  font-weight: $font-700;
+  height: $h-100;
+  margin-bottom: $em * 0.5;
+  text-align: right;
+}
+
+.reviews__grid {
+  grid-row: 2/-1;
+  max-height: $em * 50;
   overflow-x: auto;
 }
 

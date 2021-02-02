@@ -7,6 +7,7 @@ import Search from './Search';
 import Logo from '../styles/assets/eating.svg';
 
 const Navbar = () => {
+  // get results from redux
   const { results } = useSelector((state) => state.user);
   const isResults = results.length > 0;
 

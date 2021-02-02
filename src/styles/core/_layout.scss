@@ -9,7 +9,7 @@
 .fullview {
   @include center-items;
 
-  height: calc(100vh - 144px);
+  height: calc(100vh - 64px);
   width: $w-100;
 }
 
@@ -18,6 +18,7 @@
   grid-column: 1/-1;
   grid-template-columns: 1fr 20%;
   height: auto;
-  margin: $em * 10 0;
+  margin-bottom: $em * 4;
+  margin-top: $em * 12;
   width: $w-100;
 }

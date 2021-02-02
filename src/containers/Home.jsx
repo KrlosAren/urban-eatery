@@ -17,16 +17,23 @@ const Home = () => {
 
   return (
     <div className='container'>
+      {!isResults && (
+        <h3 className='home-intro'>
+          Lets Start!. Find the business want in any City
+        </h3>
+      )}
       <div className={!isResults ? 'home' : 'home-with-search'}>
         {!isResults && (
           <div className='home__input'>
             <Search />
           </div>
         )}
-        {isResults && <GridItems />}
-        <ul className='errors' id='msg'>
-          {isError && <li>😅 Something has happened !. Try again!</li>}
-        </ul>
+        {isResults && <GridItems results={results} />}
+        {isResults && (
+          <ul className='errors' id='msg'>
+            {isError && <li>😅 Something has happened !. Try again!</li>}
+          </ul>
+        )}
       </div>
     </div>
   );

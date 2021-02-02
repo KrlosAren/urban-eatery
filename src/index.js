@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// provider
 import { Provider } from 'react-redux';
 
 // app

@@ -1,6 +1,13 @@
 import React from 'react';
 import { MdStar, MdStarHalf, MdStarBorder } from 'react-icons/md';
 
+/**
+ *
+ * @param [100,100,50,0,0]
+ * @returns get star from every value in array
+ *
+ */
+
 export function getStart(value, size = 25) {
   switch (value) {
     case 0:
@@ -17,6 +24,12 @@ export function getStart(value, size = 25) {
   }
 }
 
+/**
+ *
+ * @param  value rating value {4.1 , 2.5 ... etc}
+ * @returns array of values [100,100,50,0,0]
+ * this values is a number of star from rating value
+ */
 export function getStarts(value) {
   switch (parseFloat(value)) {
     case 0.0:

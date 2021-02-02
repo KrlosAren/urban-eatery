@@ -1,6 +1,6 @@
 @media only screen and (max-width: 600px) {
   .container {
-    padding: 0 $em;
+    padding: 0 $em * 3;
   }
 
   .home {
@@ -60,7 +60,8 @@
 
   .reviews__container {
     grid-column: 1/-1;
-    margin-top: $em * 5;
+    margin-top: $em * 6;
+    max-height: $em * 40;
   }
 
   .info__hours {
@@ -83,5 +84,9 @@
   .home-with-search {
     grid-column: 1/-1;
     margin-top: $em * 18;
+  }
+
+  .reviews__grid {
+    max-height: 350px;
   }
 }

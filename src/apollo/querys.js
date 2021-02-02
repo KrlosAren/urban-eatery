@@ -1,15 +1,11 @@
 import { gql } from '@apollo/client';
 
-export const SEARCH_TERMS = gql`
-  {
-    business(id: "yelp-san-francisco") {
-      name
-      id
-      coordinates {
-        latitude
-        longitude
-      }
-    }
+export const REVIEWS = gql`
+
+query find($business: String!) {
+  reviews {
+    
+  }
   }
 `;
 
