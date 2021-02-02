@@ -12,9 +12,7 @@
     "build:dll": "webpack --config ./webpack.dll.config.js --mode production",
     "format": "prettier --write \"{*.js,src/**/*.{js,jsx}}\"",
     "lint": "eslint src/ --fix",
-    "style:format": "npx stylelint **/*.s[ac]ss",
-    "predeploy": "npm run build:dll && npm run build:prod ",
-    "deploy": "gh-pages -d dist"
+    "style:format": "npx stylelint **/*.s[ac]ss"
   },
   "keywords": [],
   "author": "Carlos Lopez Z <krlosaren@gmail.com>",
