@@ -4,6 +4,7 @@ Urban Eatery is an app to search about restaurant in the city.
 With this app you can search about food term like 'burritos' and city like 'Miami' and find many businesess in the city. 
 You can see photos, reviews , the schedule and another info.
 
+
 ## 📝 Installation
 
 To use this app you need have install Node in your computer and donwload the repo.
@@ -41,10 +42,25 @@ const client = new ApolloClient({
 });
 
 ```
-And now you can view your project in
+To view project in your machine you must run
+```
+npm run start
+```
+and now see the project in 
 ```
 http://localhost:3500
 ```
+##  Production
+
+To get your code to production run 
+```
+npm run build:dll && npm run build:dev && npm run server
+```
+and now go to 
+```
+http://localhost:3001
+```
+
 
 ## :pill: Technologies
 1. HTML

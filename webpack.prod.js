@@ -16,7 +16,10 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[fullhash].js',
-    publicPath: dev === 'dev' ? 'http://localhost:3001' : 'dist',
+    publicPath:
+      dev === 'dev'
+        ? 'http://localhost:3001'
+        : 'https://krlosaren.github.io/guruHotel-yelp/',
     chunkFilename: 'js/[id].[chunkhash].js',
   },
   optimization: {
@@ -83,13 +86,22 @@ module.exports = {
       filename: 'styles/[name].[fullhash].css',
       chunkFilename: 'styles/[id].css',
     }),
-    new AddAssetHtmlPLugin({
-      filepath: path.resolve(__dirname, 'dist/js/*.dll.js'),
-      outputPath: 'js',
-      publicPath: dev === 'dev' ? 'http://localhost:3001/js' : 'dist',
-    }),
+    new AddAssetHtmlPLugin([
+      {
+        filepath: path.resolve(__dirname, 'dist/js/*.dll.js'),
+        outputPath: 'js',
+        publicPath:
+          dev === 'dev'
+            ? 'http://localhost:3001/js'
+            : 'https://krlosaren.github.io/guruHotel-yelp/js',
+      },
+    ]),
     new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: ['**/app.*'],
+      cleanOnceBeforeBuildPatterns: [
+        '**/app.*',
+        '**/commons.*',
+        '**/modules.*',
+      ],
     }),
   ],
 };
