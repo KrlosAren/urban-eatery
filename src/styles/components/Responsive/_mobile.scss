@@ -71,6 +71,7 @@
   .menu {
     display: grid;
     grid-template-rows: $em * 8 $em * 10;
+    height: $em * 8;
   }
 
   .detail-layout {
@@ -88,5 +89,14 @@
 
   .reviews__grid {
     max-height: 350px;
+  }
+
+  .home-intro {
+    padding: 0;
+  }
+
+  .errors {
+    height: $em * 4;
+    width: 85%;
   }
 }

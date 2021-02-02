@@ -15,9 +15,9 @@
     width: $w-100;
 
     img {
-      height: 100%;
-      max-height: 100%;
-      min-width: 100%;
+      height: $em * 56;
+      max-height: $h-100;
+      min-width: $w-100;
       object-fit: cover;
       width: $w-100;
     }
@@ -27,7 +27,7 @@
     display: flex;
     flex-direction: column;
     grid-column: 2/-1;
-    height: $h-100;
+    height: $em * 56;
     padding: 0 $em * 2;
 
     h1 {

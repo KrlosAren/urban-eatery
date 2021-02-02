@@ -38,9 +38,16 @@ button[type='submit'] {
 }
 
 .home-intro {
-  // grid-row: 2/-2;
-  // position: absolute;
-  // text-align: center;
-  // top: $em * 10;
-  // width: $w-100;
+  @include center-items;
+
+  color: $color-secondary;
+  flex-direction: column;
+  font-family: $font-mukta;
+  font-size: $font-24;
+  font-weight: $font-700;
+  margin: $em 0;
+  padding: 0 $em * 2;
+  position: absolute;
+  top: 25%;
+  width: $w-100;
 }

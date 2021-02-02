@@ -1,6 +1,6 @@
 .reviews__container {
   display: grid;
-  grid-template-rows: $em * 4.2 $em * 50;
+  grid-template-rows: $em * 4.2 $em * 52;
 }
 
 .reviews__title {
@@ -16,7 +16,7 @@
 
 .reviews__grid {
   grid-row: 2/-1;
-  max-height: $em * 50;
+  max-height: $em * 52;
   overflow-x: auto;
 }
 

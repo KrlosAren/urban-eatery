@@ -5,7 +5,7 @@ import { loadState, saveState } from '../utils/localStorage';
 // apollo client
 import client from '../apollo/index';
 
-// root reducer
+// slices reducer
 import user from './user';
 
 const persistedState = loadState();

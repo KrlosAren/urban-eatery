@@ -43,6 +43,10 @@ const slice = createSlice({
       ...state,
       city: payload,
     }),
+    emptyErrors: (state, { payload }) => ({
+      ...state,
+      error: payload,
+    }),
   },
   extraReducers: {
     [fetchSearch.pending]: (state) => ({
@@ -74,4 +78,5 @@ export const {
   addData,
   setError,
   setCity,
+  emptyErrors,
 } = slice.actions;

@@ -2,13 +2,12 @@
   background-color: $color-aux;
   display: grid;
   grid-column: 2/-2;
-  height: $em * 8;
   width: $w-100;
 
   &__logo {
     @include center-items;
 
-    grid-column: 1/2;
+    grid-column: 6/-6;
     height: $h-100;
     width: $w-100;
 

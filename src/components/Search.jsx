@@ -22,18 +22,10 @@ const Search = () => {
       location: formData.get('location') || 'santiago',
     };
 
-    // get inputs values al clean -- the values may be have 2 lenght or more
-    if (query.search.trim().length > 2 && query.location.trim().length > 2) {
-      dispatch(fetchSearch(query), saveSearch(query));
+    dispatch(fetchSearch(query), saveSearch(query));
+    localStorage.clear();
 
-      // clear storage after submit
-      localStorage.clear();
-    } else {
-      dispatch(setError('Debe ingresar todos los datos'));
-      localStorage.clear();
-    }
-
-    // push to client to / when the user search from detail page
+    // push to client to / when the user fetch from detail page
     if (pathname !== '/') {
       history.push('/');
     }
