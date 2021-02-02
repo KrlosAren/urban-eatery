@@ -60,8 +60,6 @@ and now go to
 ```
 http://localhost:3001
 ```
-
-
 ## :pill: Technologies
 1. HTML
 2. Sass
