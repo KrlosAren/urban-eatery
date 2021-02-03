@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import { Route, HashRouter, Switch } from 'react-router-dom';
 import Layout from '../components/Layout';
 // components
 import { Home, Detail, NotFound } from '../containers/index';
@@ -9,15 +9,15 @@ import '../styles/index.scss';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <Layout>
         <Switch>
-          <Route exact path='https://krlosaren.github.io/urban-eatery/' component={Home} />
-          <Route exact path='https://krlosaren.github.io/urban-eatery/detail/:alias' component={Detail} />
+          <Route exact path='/' component={Home} />
+          <Route exact path='detail/:alias' component={Detail} />
           <Route component={NotFound} />
         </Switch>
       </Layout>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

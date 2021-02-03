@@ -26,8 +26,8 @@ const Search = () => {
     localStorage.clear();
 
     // push to client to / when the user fetch from detail page
-    if (pathname !== 'https://krlosaren.github.io/urban-eatery/') {
-      history.push('https://krlosaren.github.io/urban-eatery/');
+    if (pathname !== '/') {
+      history.push('/');
     }
   };
 

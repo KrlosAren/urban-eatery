@@ -36,7 +36,7 @@ const CardItem = ({ data }) => {
         </p>
         <Link
           type='button'
-          to={`https://krlosaren.github.io/urban-eatery/detail/${alias}`}
+          to={`/detail/${alias}`}
           className='card__item--button'
         >
           View More...
