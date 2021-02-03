@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav className='menu container'>
       <div className='menu__logo' style={style}>
-        <Link to='/'>
+        <Link to='https://krlosaren.github.io/urban-eatery/'>
           <Logo />
         </Link>
       </div>
