@@ -16,7 +16,10 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[fullhash].js',
-    publicPath: dev === 'dev' ? 'http://localhost:3001' : 'dist/',
+    publicPath:
+      dev === 'dev'
+        ? 'http://localhost:3001'
+        : 'http://KrlosAren.github.io/guruHotel-yelp/dist',
     chunkFilename: 'js/[id].[chunkhash].js',
   },
   optimization: {
@@ -87,7 +90,10 @@ module.exports = {
       {
         filepath: path.resolve(__dirname, 'dist/js/*.dll.js'),
         outputPath: 'js',
-        publicPath: dev === 'dev' ? 'http://localhost:3001/js' : 'dist/js',
+        publicPath:
+          dev === 'dev'
+            ? 'http://localhost:3001/js'
+            : 'http://KrlosAren.github.io/guruHotel-yelp/dist',
       },
     ]),
     new CleanWebpackPlugin({
