@@ -1,7 +1,6 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 
-const API_KEY =
-  'TzJsZJG_YNdcwJNbZCPLrM01PlwUGAukOQE52Gm8Pvog1sajR2slYYBxSPpohxBFELPBNLZDc81NiaWwFMIXFg4GgBY_02cMQI4iNh2yi5hVy3gxlncApTM9axITYHYx';
+const API_KEY = secrets.API_KEY;
 
 const client = new ApolloClient({
   uri: 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/graphql',
