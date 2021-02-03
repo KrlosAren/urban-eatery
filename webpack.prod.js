@@ -19,7 +19,7 @@ module.exports = {
     publicPath:
       dev === 'dev'
         ? 'http://localhost:3001'
-        : 'https://krlosaren.github.io/urban-eatery/dist',
+        : 'https://krlosaren.github.io/urban-eatery/',
     chunkFilename: 'js/[id].[chunkhash].js',
   },
   optimization: {
@@ -93,7 +93,7 @@ module.exports = {
         publicPath:
           dev === 'dev'
             ? 'http://localhost:3001/js'
-            : 'https://krlosaren.github.io/urban-eatery/dist',
+            : 'https://krlosaren.github.io/urban-eatery/js',
       },
     ]),
     new CleanWebpackPlugin({
