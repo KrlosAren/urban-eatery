@@ -12,8 +12,8 @@ function App() {
     <BrowserRouter>
       <Layout>
         <Switch>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/detail/:alias' component={Detail} />
+          <Route exact path='https://krlosaren.github.io/urban-eatery/' component={Home} />
+          <Route exact path='https://krlosaren.github.io/urban-eatery/detail/:alias' component={Detail} />
           <Route component={NotFound} />
         </Switch>
       </Layout>
