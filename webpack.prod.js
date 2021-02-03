@@ -19,7 +19,7 @@ module.exports = {
     publicPath:
       dev === 'dev'
         ? 'http://localhost:3001'
-        : 'http://KrlosAren.github.io/guruHotel-yelp/dist',
+        : 'https://krlosaren.github.io/urban-eatery/dist',
     chunkFilename: 'js/[id].[chunkhash].js',
   },
   optimization: {
@@ -93,7 +93,7 @@ module.exports = {
         publicPath:
           dev === 'dev'
             ? 'http://localhost:3001/js'
-            : 'http://KrlosAren.github.io/guruHotel-yelp/dist',
+            : 'https://krlosaren.github.io/urban-eatery/dist',
       },
     ]),
     new CleanWebpackPlugin({
