@@ -1,6 +1,7 @@
 import React from 'react';
 import { IoMdClose } from 'react-icons/io';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams, useLocation } from 'react-router-dom';
 
 // components
 import GridItems from '../components/GridItems';

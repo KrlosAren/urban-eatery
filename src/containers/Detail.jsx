@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link, useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory, useLocation, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaMapMarkerAlt, FaMoneyBillAlt, FaPhoneAlt } from 'react-icons/fa';
 import { MdSchedule } from 'react-icons/md';
@@ -9,8 +9,10 @@ import Hours from '../components/Hours';
 import { saveView } from '../store/user';
 
 const Detail = () => {
-  const { alias } = useParams();
+  const { pathname } = useLocation();
   const { results } = useSelector((state) => state.user);
+
+  const alias = pathname.split('/detail/')[1];
 
   const item = results.find((business) => business.alias === alias);
 
