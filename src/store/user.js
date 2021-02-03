@@ -14,18 +14,14 @@ const slice = createSlice({
   name: 'users',
   initialState: {
     results: [],
-    searchs: [],
-    favorites: [],
+    views: [],
     error: [],
     isError: false,
     isLoading: false,
   },
   reducers: {
-    saveItem: (state, { payload }) => ({
-      favorites: [...state.favorites, payload],
-    }),
-    saveSearch: (state, action) => ({
-      searchs: [...state.searchs].push(action.payload),
+    saveView: (state, { payload }) => ({
+      favorites: [...state.views, payload],
     }),
     addData: (state, { payload }) => ({
       ...state,
@@ -38,10 +34,6 @@ const slice = createSlice({
       error: [...state.error, payload],
       isError: true,
       isLoading: false,
-    }),
-    setCity: (state, { payload }) => ({
-      ...state,
-      city: payload,
     }),
     emptyErrors: (state, { payload }) => ({
       ...state,
@@ -72,11 +64,4 @@ const slice = createSlice({
 export default slice.reducer;
 
 // actions
-export const {
-  saveItem,
-  saveSearch,
-  addData,
-  setError,
-  setCity,
-  emptyErrors,
-} = slice.actions;
+export const { saveView, addData, setError, emptyErrors } = slice.actions;

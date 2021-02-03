@@ -1,8 +1,7 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 
-const {
-  API_KEY,
-} = 'TzJsZJG_YNdcwJNbZCPLrM01PlwUGAukOQE52Gm8Pvog1sajR2slYYBxSPpohxBFELPBNLZDc81NiaWwFMIXFg4GgBY_02cMQI4iNh2yi5hVy3gxlncApTM9axITYHYx';
+const API_KEY =
+  'Fz2Ih6jEB9oJ2PEAIMTE3RWX16vqG1X9yHXIDZjEz809xmu0habmkR1Fh-93WeFZAnhFxXLzJgeJVOzHqjeS4lOITfAztpsdnPoN87a82Gmtpd955YSv5hcMrxYaYHYx';
 
 const client = new ApolloClient({
   uri: 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/graphql',

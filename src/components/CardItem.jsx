@@ -1,8 +1,6 @@
 import React from 'react';
 import { FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
-import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { saveItem } from '../store/user';
 import Rating from './Rating';
 
 const CardItem = ({ data }) => {
@@ -36,7 +34,11 @@ const CardItem = ({ data }) => {
           <FaMapMarkerAlt color='#ff5a29' />
           <span>{location.formatted_address}</span>
         </p>
-        <Link to={`/detail/${alias}`} className='card__item--button'>
+        <Link
+          type='button'
+          to={`/detail/${alias}`}
+          className='card__item--button'
+        >
           View More...
         </Link>
       </div>

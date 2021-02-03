@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FaSearch } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 import { useHistory, useParams } from 'react-router-dom';
-import { fetchSearch, saveSearch, setError } from '../store/user';
+import { fetchSearch, setError } from '../store/user';
 
 const Search = () => {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ const Search = () => {
       location: formData.get('location') || 'santiago',
     };
 
-    dispatch(fetchSearch(query), saveSearch(query));
+    dispatch(fetchSearch(query));
     localStorage.clear();
 
     // push to client to / when the user fetch from detail page

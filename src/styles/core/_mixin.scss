@@ -31,6 +31,7 @@
 @mixin button {
   background-color: $color-light;
   color: $color-white;
+  cursor: pointer;
   font-size: $font-16;
   padding: $em * 0.5;
   text-align: center;

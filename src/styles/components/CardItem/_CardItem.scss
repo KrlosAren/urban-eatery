@@ -61,4 +61,6 @@
 
 .card__item--button {
   @include button;
+
+  border: transparent;
 }
