@@ -80,7 +80,7 @@ const Detail = () => {
               </div>
               <p
                 onClick={() => {
-                  history.push('/');
+                  history.push('https://krlosaren.github.io/urban-eatery/');
                 }}
                 className='button-back'
               >
